@@ -17,3 +17,9 @@ function initPage() {
    //  When search is clicked, read the city name typed in
 
    function getWeather(cityName) {
+    // Get Request from openweathermap api
+    
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    axios.get(queryURL)
+    .then(function(response){
+        console.log(response);
