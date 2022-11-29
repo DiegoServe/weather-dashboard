@@ -13,3 +13,11 @@ function addResult(){
     $(".subtitle").attr("style","display:inline")
     addInfo(inputCity);   
 }; 
+
+//add event listener to search history item
+$(".history").on('click', function(event){
+    event.preventDefault();
+    $(".subtitle").attr("style","display:inline")
+     document.getElementById("myInput").value =  event.target.id;
+    getResult(); 
+});
