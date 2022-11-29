@@ -21,3 +21,7 @@ $(".history").on('click', function(event){
      document.getElementById("myInput").value =  event.target.id;
     getResult(); 
 });
+
+//add event listner to search button
+document.getElementById("searchBtn").addEventListener('click', addResult);
+document.getElementById("searchBtn").addEventListener('click', getResult);
