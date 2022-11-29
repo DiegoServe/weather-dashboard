@@ -14,4 +14,6 @@ function initPage() {
     
     const APIKey = "aa66bff299d610638630deec7feb874a"
 
-   
+   //  When search is clicked, read the city name typed in
+
+   function getWeather(cityName) {
