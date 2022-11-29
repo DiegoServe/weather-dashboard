@@ -99,3 +99,31 @@ function k2f(K) {
     return Math.floor((K - 273.15) *1.8 +32);
 }
 
+function renderSearchHistory() {
+    historyEl.innerHTML = "";
+    for (let i=0; i<searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+        historyItem.setAttribute("type","text");
+        historyItem.setAttribute("readonly",true);
+        historyItem.setAttribute("class", "form-control d-block bg-white");
+        historyItem.setAttribute("value", searchHistory[i]);
+        historyItem.addEventListener("click",function() {
+            getWeather(historyItem.value);
+        })
+        historyEl.append(historyItem);
+    }
+}
+
+renderSearchHistory();
+if (searchHistory.length > 0) {
+    getWeather(searchHistory[searchHistory.length - 1]);
+}
+
+
+//  Save user's search requests and display them underneath search form
+//  When page loads, automatically generate current conditions and 5-day forecast for the last city the user searched for
+
+}
+initPage();
+
